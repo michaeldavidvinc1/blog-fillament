@@ -44,8 +44,9 @@ class User extends Authenticatable implements FilamentUser
     // middleware siapa yg bisa akses panel dashboard
     public function canAccessPanel(Panel $panel): bool
     {
-        return  $this->isAdmin() || $this->isEditor();
+        return $this->can('view-admin', User::class);
     }
+
 
     public function isAdmin(){
         return $this->role === self::ROLE_ADMIN;
