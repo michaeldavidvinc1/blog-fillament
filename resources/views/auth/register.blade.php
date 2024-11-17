@@ -1,4 +1,4 @@
-<x-app-layout title="Register">
+<x-app-layout>
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
