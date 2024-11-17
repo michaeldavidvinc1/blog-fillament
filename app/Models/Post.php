@@ -29,6 +29,10 @@ class Post extends Model
         return $this->belongsToMany(Category::class);
     }
 
+    public function likes(){
+        return $this->belongsToMany(User::class, 'post_like')->withTimestamps();
+    }
+
     public function scopePublished($query){
         $query->where('published_at', '<=', Carbon::now());
     }
